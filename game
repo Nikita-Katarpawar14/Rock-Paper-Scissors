@@ -1,0 +1,38 @@
+import random
+
+choices = ['rock', 'paper', 'scissors']
+def rock_game():
+    while True:
+        player = None
+        computer = random.choice(choices)
+        
+        while player not in choices:
+            player = input("Pick between rock, paper, scissors: ").lower()
+            
+
+        print("Computer:", computer)
+        print("Player:", player)
+
+        if player == computer:
+            print("IT'S A TIE!")
+        elif player == "rock":
+            if computer == "paper":
+                print("You LOSE!")
+            else:  # computer is scissors
+                print("You WIN!")
+        elif player == "scissors":
+            if computer == 'rock':
+                print("You LOSE!")
+            else:  # computer is paper
+                print("You WIN!")
+        elif player == "paper":
+            if computer == "scissors":
+                print("You LOSE!")
+            else:  # computer is rock
+                print("You WIN!")
+
+        play_again = input("Would you like to play again? (yes/no): ").lower()
+        if play_again == "no":
+            print("You quit. Thank you for playing!")
+            break
+rock_game()
